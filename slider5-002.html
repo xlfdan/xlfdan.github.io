@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>读书笔记</title>
+<meta name="author" content="m.qibin.tk">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta name="author" content="m.qibin.tk">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+<meta http-equiv="Expires" content="-1">
+<meta http-equiv="Cache-Control" content="no-cache">
+<meta http-equiv="Pragma" content="no-cache">
+<meta name="description" content="读书笔记的体验! ">
+<meta name="Keywords" content="关键字,手机,笔记本,电脑,MP3,CD,VCD,DV,相机,数码,配件,手表,存储卡">
+<script type="text/javascript">
+    var rTimeArr = [];
+    rTimeArr[0] = {time : new Date(), sTime : "0"};
+    document.addEventListener("DOMContentLoaded",function(){
+        rTimeArr[1] = {time : new Date() , sTime : "0"};
+    });
+</script>
+<link rel="apple-touch-icon-precomposed" href="../../../../../https@st.360buyimg.com/m/images/apple-touch-icon.png@v=jd201704271607">
+<link rel="stylesheet" type="text/css" href="css/layout2015.css" charset="gbk">
+<link rel="stylesheet" type="text/css" href="css/home_2017_4_6.css" charset="gbk">
+
+<style>
+	.boss{width:100%;margin:10px auto;overflow:hidden;}
+	.boss div{
+		width:24%;
+		float:left;
+		margin-left:7%;
+		padding-bottom: 25%;    /*让子元素的高度 = 父元素的padding-bottom*/
+  	position: relative;
+		}
+	.boss div img{
+		display:block;
+		width:100%;              /*   		height: 0;   */
+		height:100%;
+		margin-top:1px;
+		margin-bottom:1px;
+		position: absolute;
+		}
+	.boss div texttwo{        /*  这里的 texttwo 没有用上   */
+		display:block;
+		width:100%;
+		height:100%;
+		color:black;
+		font-weight:600;
+		text-align:center;
+		margin-top:1px;
+		margin-bottom:1px;
+		position: absolute;
+		bottom: 0;
+		}
+</style>
+
+
+<style>
+	.bosstext{width:100%;margin:1px auto;overflow:hidden;}
+	.bosstext div{
+		width:24%;
+		float:left;
+		margin-left:7%;
+		}
+	.bosstext div texttwo{
+		display:block;
+		width:100%;
+		color:black;
+		font-weight:600;
+		text-align:center;
+		margin-top:1px;
+		margin-bottom:24px;
+		}
+</style>
+
+
+
+
+
+
+
+
+     <style>
+         *{
+             margin: 0;
+             padding: 0;
+         }
+         ul{
+             list-style: none;
+         }
+         img{
+             vertical-align: top;
+         }
+ 
+         .box{
+/*
+             width:10%;
+
+             width: 654px;
+             height: 337px;
+
+             width = document.body.clientWidth; //宽度
+             height = width*0.5;//高度
+
+             width = device-width; //宽度
+
+*/
+             width: 654px;
+             height: 337px;
+             background-color: pink;
+             margin:100px auto;
+             position: relative;
+             overflow: hidden;
+         }
+         .box ul{
+             width: 600%;
+             position: absolute;
+             left: 0;
+             top:0;
+         }
+         .box ul li{
+ 
+             float: left;
+         }
+     </style>
+
+
+
+
+
+
+
+</head>
+<body>
+
+
+     <div class="box" id="scroll">
+         <ul >
+             <li><img src="images/sea2.jpg" alt="" href="http://www.163.com"></li>
+             <li><img src="images/sea1.jpg" alt="" href="http://www.163.com"></li>
+             <li><img src="images/sea2.jpg" alt="" href="http://www.163.com"></li>
+             <li><img src="images/sea1.jpg" alt="" href="http://www.163.com"></li>
+             <li><img src="images/sea1.jpg" alt="" href="http://www.163.com"></li>
+             <li><img src="images/sea2.jpg" alt="" href="http://www.163.com"></li>
+         </ul>
+     </div>
+
+</body>
+
+ <script>
+     var scroll=document.getElementById("scroll");//大盒子
+
+/*
+     scroll.width = document.body.clientWidth; //宽度
+*/
+
+     scroll.width = document.body.clientWidth;
+     
+     var ul=scroll.children[0];
+     var num=0;//控制左侧的值 left
+     var temp=0;//控制左侧的值 left
+     var timer=null;//存定时器
+
+     var wd=document.body.clientWidth;
+
+
+     timer=setInterval(autoPlay,15);
+     function autoPlay(){
+         num--;
+         //num<=-1308?num=0:num;
+         
+         //if(document.scroll.children ==1)
+         //num++;
+         
+         if((num==-(wd*1)) ||  (num==-(wd*2)) || (num==-(wd*3)))
+         {
+         	temp++;
+         	//ul=scroll.children[2];
+
+         	if(temp>300)
+         	temp=0;
+         	else
+         num++;
+         //ul=scroll.children[2];
+        }
+        //else
+         ul.style.left=num+"px";
+     }
+ 
+     scroll.onmouseover=function(){//鼠标经过大盒子 停止滚动
+         clearInterval(timer);
+     }
+     scroll.onmouseout=function(){
+         timer=setInterval(autoPlay,5);//鼠标离开 开始滚动
+ 
+     }
+ </script>
+
+
+</html>
